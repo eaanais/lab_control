@@ -51,7 +51,7 @@ h4 = deque(maxlen=100)
 ############################aplicacion grafica implementacion
 app = dash.Dash()
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
-
+                                   
 app.layout = html.Div(html.Div([html.H4('Ejemplo'), html.Div(id='live-update-text'), dcc.Graph(id='live-update-graph'),
                                 dcc.Interval(id='interval-component', interval=100, n_intervals=0)]))
 
@@ -68,14 +68,14 @@ def updateText(n):
     h3.append(h_3)
     h4.append(h_4)
     times.append(t)
-    valores = [html.Span('h1: {}'.format(round(h_1,2)), style=style),
-               html.Span('h2: {}'.format(round(h_2,2)), style=style),
-               html.Span('h3: {}'.format(round(h_3,2)), style=style),
-               html.Span('h4: {}'.format(round(h_4,2)), style=style)]
+    valores = [html.Span('h1: {}'.format(round(h_1,3)), style=style),
+               html.Span('h2: {}'.format(round(h_2,3)), style=style),
+               html.Span('h3: {}'.format(round(h_3,3)), style=style),
+               html.Span('h4: {}'.format(round(h_4,3)), style=style)]
     t += 1
     return valores
 
-@app.callback(Output('live-update-graph', 'figure'), [Input('interval-component', 'n_intervals')])
+@app.callback(Output('live-update-graph', 'figure'), [Input('live-update-text', 'children')])
 def UpdateGraph(n):
     global times, h1, h2, h3, h4
     data = {'time': list(times), 'altura1': list(h1), 'altura2': list(h2), 'altura3': list(h3), 'altura4': list(h4)}
