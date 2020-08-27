@@ -101,7 +101,7 @@ def UpdateGraph(n):
     fig = plotly.tools.make_subplots(rows=2, cols=2, vertical_spacing=0.2,
                                      subplot_titles=('tanque1', 'tanque2', 'tanque3', 'tanque4'))
     fig['layout']['margin'] = {
-        'l': 30, 'r': 10, 'b': 30, 't': 10
+        'l': 30, 'r': 10, 'b': 30, 't': 30
     }
     fig['layout']['legend'] = {'x': 0, 'y': 1, 'xanchor': 'left'}
 
@@ -150,7 +150,7 @@ def UpdateGraph(n):
     fig = plotly.tools.make_subplots(rows=2, cols=1, vertical_spacing=0.2,
                                      subplot_titles=('valvula1', 'valvula2'))
     fig['layout']['margin'] = {
-        'l': 30, 'r': 10, 'b': 30, 't': 10
+        'l': 30, 'r': 10, 'b': 30, 't': 30
     }
     fig['layout']['legend'] = {'x': 0, 'y': 1, 'xanchor': 'left'}
 
