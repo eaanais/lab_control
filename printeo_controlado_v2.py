@@ -216,15 +216,20 @@ def UpdateGraph(n, STP1, STP2, Kp, Ki, Kd, Kw, razon_1, razon_2):
     razon2.set_value(razon_2)
     
     pid1.setPoint = float(STP1)
-    pid1.setPoint = float(STP2)
+    pid2.setPoint = float(STP2)
 
     pid1.Kp = float(Kp)
     pid1.Ki = float(Ki) 
     pid1.Kd = float(Kd)
     pid1.Kw = float(Kw)
 
+    pid2.Kp = float(Kp)
+    pid2.Ki = float(Ki) 
+    pid2.Kd = float(Kd)
+    pid2.Kw = float(Kw)
+
     v_1 = pid1.update(h_1)
-    v_2 = pid1.update(h_2)
+    v_2 = pid2.update(h_2)
     
     valvula1.set_value(v_1)
     valvula2.set_value(v_2)
